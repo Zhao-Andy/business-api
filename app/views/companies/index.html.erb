@@ -1,0 +1,38 @@
+<h1>companies and what they're about:</h1>
+
+<div ng-app="app">
+  <div ng-controller="companiesCtrl">
+    <ul>
+      <input type="text" ng-model="filterName" placeholder="Search name">
+      <table>
+        <tr>
+        <th>Name<button ng-click="toggleOrder('name')">Name</button></th>
+        <th><button ng-click="toggleOrder('slogan')">Slogan</button></th>
+        <th><button ng-click="toggleOrder('buzzword')">Buzzword</button></th>
+        <th><button ng-click="toggleOrder('department')">Department</button></th>
+        </tr>
+      <tr ng-repeat="company in companies | filter:search | orderBy:orderAttribute:isReverse" style="width:50%">{{company.name}}
+        <th>{{company.name}}</th>
+        <th>{{company.slogan}}</th>
+        <th>{{company.buzzword}}</th>
+        <th>{{company.department}}</th>
+      </tr>
+      </table>
+      <br>
+      Add a new company:
+      <div ng-repeat="error in errors">
+        <ul>
+          <li>{{error}}</li>
+        </ul>
+      </div>
+      <div>{{message}}</div>
+      <form novalidate class="simple-form">
+      Company Name: <input type="text" ng-model="company.name" /><br />
+      Slogan: <input type="text" ng-model="company.slogan" /><br />
+      Buzzword: <input type="text" ng-model="company.buzzword" /><br />
+      Department: <input type="text" ng-model="company.department" /><br />
+      <input type="submit" ng-click="addCompany(company)" value="Add" />
+    </form>
+    </ul>
+  </div>
+</div>
