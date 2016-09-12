@@ -8,3 +8,17 @@ table, th, td {
 table {
     border-spacing: 10px;
 }
+
+.ng-enter, .ng-move{
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+.ng-leave{
+  -webkit-animation: fadeOut 2s;
+  -moz-animation: fadeOut 2s;
+  -o-animation: fadeOut 2s;
+  animation: fadeOut 2s;
+}
